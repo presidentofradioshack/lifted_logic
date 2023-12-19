@@ -10,6 +10,7 @@ import { releases } from "../app/data/releases";
 
 import styles from "@/public/styles/carousel.module.scss";
 
+// @ts-ignore
 const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
 	const {
 		carouselState: { currentSlide },
@@ -54,13 +55,14 @@ const CarouselSlider = () => {
 
 	return (
 		<Carousel
-			afterChange={(nextSlide, { currentSlide, onMove }) => {
+			afterChange={(nextSlide, { currentSlide }) => {
 				setCurrentSlide(currentSlide + 1);
 			}}
 			responsive={responsive}
 			arrows={false}
 			partialVisbile={true}
 			renderButtonGroupOutside={true}
+			// @ts-ignore
 			customButtonGroup={<ButtonGroup />}
 			focusOnSelect={true}
 			containerClass='carousel-container'
