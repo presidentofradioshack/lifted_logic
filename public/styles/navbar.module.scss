@@ -1,32 +1,57 @@
 @use '../../app/mixins.module.scss';
 
 .navbar {
-	position: fixed; 
-	top: 0; 
-	padding: 1rem 3rem;
-	align-items: center; 
-	width: 100%; 
-	background-color: #ffffff; 
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 64px;
+	background-color: white;
 	z-index: 10;
+
+	.navbar_container {
+		margin: 0 auto;
+		padding: 0 36px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%;
+	}
+
+	.mobile_menu_icon {
+		display: block;
+		margin-left: auto;
+	}
 
 	.nav_links {
 		display: none;
+
+		ul {
+			display: flex;
+			gap: 61px;
+
+			li {
+				color: #001D5D;
+			}
+		}
+	}
+
+	button {
+		display: none;
+	}
+
+	@include mixins.for-desktop-up {
+		.mobile_menu_icon {
+			display: none;
+		}
+	
+		.nav_links {
+			display: flex;
+		}
+
+		button {
+			display: block;
+		}
 	}
 }
 
-.button {
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem; 
-	padding-left: 2.5rem;
-	padding-right: 2.5rem; 
-	background-color: #D9F0D0;
-	color: #42A418;
-	transition: all;
-	transition-duration: 150ms;
-	transition-timing-function: linear;
 
-	&:hover {
-		background-color: #42A418;
-		color: white;
-	}
-}

@@ -33,19 +33,22 @@ const CarouselSlider = () => {
 	const responsive = {
 		superLargeDesktop: {
 			breakpoint: { max: 4000, min: 3000 },
-			items: 5,
+			items: 2,
 		},
 		desktop: {
 			breakpoint: { max: 3000, min: 1024 },
-			items: 3,
+			items: 2,
+			partialVisibilityGutter: 60,
 		},
 		tablet: {
-			breakpoint: { max: 1024, min: 464 },
-			items: 2,
+			breakpoint: { max: 1120, min: 464 },
+			items: 1,
+			partialVisibilityGutter: 60,
 		},
 		mobile: {
-			breakpoint: { max: 464, min: 0 },
+			breakpoint: { max: 720, min: 0 },
 			items: 1,
+			partialVisibilityGutter: 60,
 		},
 	};
 
@@ -56,6 +59,7 @@ const CarouselSlider = () => {
 			}}
 			responsive={responsive}
 			arrows={false}
+			partialVisbile={true}
 			renderButtonGroupOutside={true}
 			customButtonGroup={<ButtonGroup />}
 			focusOnSelect={true}
@@ -63,13 +67,31 @@ const CarouselSlider = () => {
 		>
 			{releases.map((release, index) => (
 				<div key={index} className={styles.carousel_card}>
-					<div className='flex-[1_1_0%]'>
-						<Image className='w-full h-full object-cover' src={release.image} alt={release.title} />
-					</div>
-					<div className='flex-[2_2_0%]'>
-						<h3 className='font-bold text-xl'>{release.title}</h3>
-						<h4 className='text-green uppercase text-sm my-2'>{release.name}</h4>
-						<p className='text-[12px]'>{release.description}</p>
+					<div className={styles.carousel_card_wrapper}>
+						<div className={styles.carousel_card_image_container}>
+							<Image
+								style={{ width: "100%", height: "100%", objectFit: "cover" }}
+								src={release.image}
+								alt={release.title}
+							/>
+						</div>
+						<div className={styles.carousel_card_details_container}>
+							<h4>{release.title}</h4>
+							<span
+								style={{
+									fontSize: "16px",
+									lineHeight: "24px",
+									letterSpacing: "4%",
+									textTransform: "uppercase",
+									color: "#42A418",
+								}}
+							>
+								{release.name}
+							</span>
+							<p className='small-body' style={{ marginTop: "12px" }}>
+								{release.description}
+							</p>
+						</div>
 					</div>
 				</div>
 			))}

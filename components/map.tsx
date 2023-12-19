@@ -8,7 +8,7 @@ const Map = () => {
 
 	return (
 		<GoogleMap
-			mapContainerStyle={{ width: "100%", height: "400px" }}
+			mapContainerStyle={{ width: "100%", height: "544px" }}
 			center={center}
 			zoom={15}
 			options={{

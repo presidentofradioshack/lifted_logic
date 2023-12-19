@@ -1,14 +1,25 @@
 .carousel_card {
-	display: flex; 
-	padding: 3rem 1rem;
+	display: flex;
+	align-items: center;
+	padding: 36px 36px;
 	margin: 0 1.5rem;
-	gap: 1.5rem; 
+	gap: 1rem;
 	align-items: center; 
 	background-color: #ffffff; 
-	transition-property: opacity;
-	transition-duration: 300ms; 
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
-	drop-shadow: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03)) drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08)); 
+
+	.carousel_card_wrapper {
+		display: flex; 
+		gap: 16px;
+		height: 75%;
+
+		.carousel_card_image_container {
+			aspect-ratio: square;
+		}
+	
+		.carousel_card_details_container {
+			flex: 1;
+		}
+	}
 }
 
 .carousel_button_container {
@@ -25,8 +36,8 @@
 	align-items: center; 
 	background-color: #B8BFCF;
 	border-radius: 9999px; 
-	width: 4rem; 
-	height: 4rem; 
+	width: 68px; 
+	height: 68px; 
 	cursor: pointer; 
 	transition: all;
 	transition-timing-function: linear;

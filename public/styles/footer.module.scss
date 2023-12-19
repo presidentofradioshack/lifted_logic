@@ -1,7 +1,7 @@
 @use '../../app/mixins.module.scss';
 
 .footer {
-	padding: 2rem 2.5rem 1.5rem;
+	padding: 4rem 2.5rem 1.5rem;
 	font-weight: 500; 
 	color: #ffffff; 
 	background-color: #001D5D;
@@ -17,9 +17,13 @@
 
 	.footer_details {
 		flex: 1;
-		margin-top: 1.5rem; 
+		margin: 36px 0; 
 		font-size: 1.125rem;
-		line-height: 1.75rem; 
+		line-height: 1.75rem;
+
+		p {
+			width: 50%;
+		}
 
 		.footer_address {
 			margin: 1rem 0;
@@ -29,8 +33,7 @@
 	.footer_links {
 		flex: 2;
 		display: grid;
-		grid-template-columns: repeat(1, minmax(0, 1fr)); 
-		margin-top: 2rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr)); 
 
 		@include mixins.for-tablet-portrait-up {
 			grid-template-columns: repeat(2, minmax(0, 1fr)); 
@@ -41,14 +44,18 @@
 		}
 
 		ul {
-			span {
-				margin: 1.5rem 0 0.5rem;
-			}
-
 			margin-top: 1rem;
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
+
+			span {
+				margin: 36px 0 16px;
+			}
+
+			@include mixins.for-tablet-landscape-up {
+				margin-top: 0;
+			}
 		}
 	}
 

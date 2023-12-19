@@ -23,7 +23,11 @@ interface FormInput {
 }
 
 const HomePage = () => {
-	const { register, handleSubmit } = useForm<FormInput>();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<FormInput>();
 	const onSubmit: SubmitHandler<FormInput> = (data) => console.log(data);
 
 	const { isLoaded } = useJsApiLoader({
@@ -32,7 +36,8 @@ const HomePage = () => {
 
 	return (
 		<>
-			<section className={styles.hero}>
+			<section className={styles.hero_container}>
+				<div className={styles.hero_bg} />
 				<div className={styles.hero_content}>
 					<h1>A.M. Paradox</h1>
 					<p>
@@ -54,7 +59,7 @@ const HomePage = () => {
 
 				<div className={styles.featured_artist_wrapper}>
 					<h2>Brent Faiyaz, So Far Gone</h2>
-					<p>
+					<p className='regular-body'>
 						Faiyaz began uploading his music onto SoundCloud in 2014 and moved from his hometown Columbia, Maryland to
 						Charlotte, North Carolina before ultimately settling in Los Angeles, California to further his music career.
 						On January 19, 2015, he released his debut single "Allure". On June 1, 2016, Faiyaz released "Invite Me",
@@ -62,14 +67,14 @@ const HomePage = () => {
 						Paradox was released and received with positive reviews from music critics. On January 26, 2017, Sonder
 						released their debut EP Into.
 					</p>
-					<button className={styles.button}>Learn More</button>
+					<button>Learn More</button>
 				</div>
 			</section>
 
 			<section className={styles.new_releases_section}>
 				<div className={styles.new_releases_heading}>
-					<h2>New Releases</h2>
-					<p>
+					<h3>New Releases</h3>
+					<p className='large-body'>
 						New albums every single month, check out the newest & best from Snyder Recording artist, now available on
 						Apple Music & Spotify.
 					</p>
@@ -82,8 +87,8 @@ const HomePage = () => {
 
 			<section className={styles.contact_section}>
 				<div className={styles.contact_section_heading}>
-					<h2>Get In Touch</h2>
-					<p>
+					<h3>Get In Touch</h3>
+					<p className='large-body'>
 						New albums every single month, check out the newest & best from Snyder Recording artist, now available on
 						Apple Music & Spotify.
 					</p>
@@ -92,22 +97,53 @@ const HomePage = () => {
 						<div className={styles.form_grid}>
 							<div className={styles.form_input_group}>
 								<label>First Name</label>
-								<input placeholder='First Name' {...register("firstName")} />
+								<input
+									placeholder='First Name'
+									{...register("firstName", { required: true })}
+									aria-invalid={errors.firstName ? "true" : "false"}
+								/>
+								{errors.firstName && (
+									<span style={{ color: "red" }} role='alert'>
+										First name is required
+									</span>
+								)}
 							</div>
 
 							<div className={styles.form_input_group}>
 								<label>Last Name</label>
-								<input placeholder='Last Name' {...register("lastName")} />
+								<input
+									placeholder='Last Name'
+									{...(register("lastName"), { required: true })}
+									aria-invalid={errors.lastName ? "true" : "false"}
+								/>
+								{errors.lastName && (
+									<span style={{ color: "red" }} role='alert'>
+										Last name is required
+									</span>
+								)}
 							</div>
 
 							<div className={styles.form_input_group}>
 								<label>Email Address</label>
-								<input placeholder='Email Address' {...register("email")} />
+								<input
+									type='email'
+									placeholder='Email Address'
+									{...(register("email"), { required: true })}
+									aria-invalid={errors.email ? "true" : "false"}
+								/>
+								{errors.email && (
+									<span style={{ color: "red" }} role='alert'>
+										Email is required
+									</span>
+								)}
 							</div>
 
 							<div className={styles.form_input_group}>
 								<label>Reason for Contacting</label>
-								<select {...register("reason")}>
+								<select {...(register("reason"), { required: true })}>
+									<option value='' selected disabled>
+										Select One
+									</option>
 									<option value='other'>Other</option>
 								</select>
 							</div>
@@ -118,7 +154,7 @@ const HomePage = () => {
 							<textarea placeholder='Write a brief message...' rows={6}></textarea>
 						</div>
 
-						<button type='submit' className={styles.button} style={{ marginTop: "24px" }}>
+						<button type='submit' style={{ marginTop: "24px" }}>
 							Learn More
 						</button>
 					</form>

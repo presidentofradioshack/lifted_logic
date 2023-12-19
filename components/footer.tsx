@@ -3,10 +3,11 @@ import React from "react";
 import Link from "next/link";
 
 import LogoWhite from "@/public/logos/Logo-White.svg";
-import facebookIcon from "@/public/icons/002-facebook 1.svg";
-import instagramIcon from "@/public/icons/007-instagram 1.svg";
-import twitterIcon from "@/public/icons/004-twitter 1.svg";
-import youtubeIcon from "@/public/icons/009-youtube 1.svg";
+import facebookIcon from "@/public/icons/facebook.svg";
+import instagramIcon from "@/public/icons/instagram.svg";
+import Instagram from "@/public/icons/instagram.svg";
+import twitterIcon from "@/public/icons/twitter.svg";
+import youtubeIcon from "@/public/icons/youtube.svg";
 
 import styles from "@/public/styles/footer.module.scss";
 
@@ -42,11 +43,13 @@ const Footer = () => {
 						<Image src={LogoWhite} alt='Synder Recordings' />
 					</div>
 
-					<p className={styles.footer_address}>8521 W Fairfax Rd Los Angeles, CA</p>
+					<p className={styles.footer_address} style={{ color: "white" }}>
+						8521 W Fairfax Rd Los Angeles, CA
+					</p>
 
 					<div>
-						<p>990210</p>
-						<p>(909) 505 4302</p>
+						<p style={{ color: "white" }}>990210</p>
+						<p style={{ color: "white" }}>(909) 505 4302</p>
 					</div>
 				</div>
 				<div className={styles.footer_links}>
@@ -93,7 +96,7 @@ const Footer = () => {
 
 				<div className={styles.footer_social_links}>
 					{socialMediaLinks.map((link) => (
-						<Link href={link.href}>
+						<Link key={link.title} href={link.href}>
 							<Image src={link.icon} alt={link.title} />
 							<span style={{ display: "none" }}>{link.title}</span>
 						</Link>
