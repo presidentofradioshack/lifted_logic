@@ -1,0 +1,32 @@
+@use '../../app/mixins.module.scss';
+
+.navbar {
+	position: fixed; 
+	top: 0; 
+	padding: 1rem 3rem;
+	align-items: center; 
+	width: 100%; 
+	background-color: #ffffff; 
+	z-index: 10;
+
+	.nav_links {
+		display: none;
+	}
+}
+
+.button {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem; 
+	padding-left: 2.5rem;
+	padding-right: 2.5rem; 
+	background-color: #D9F0D0;
+	color: #42A418;
+	transition: all;
+	transition-duration: 150ms;
+	transition-timing-function: linear;
+
+	&:hover {
+		background-color: #42A418;
+		color: white;
+	}
+}

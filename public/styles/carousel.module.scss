@@ -1,0 +1,38 @@
+.carousel_card {
+	display: flex; 
+	padding: 3rem 1rem;
+	margin: 0 1.5rem;
+	gap: 1.5rem; 
+	align-items: center; 
+	background-color: #ffffff; 
+	transition-property: opacity;
+	transition-duration: 300ms; 
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+	drop-shadow: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03)) drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08)); 
+}
+
+.carousel_button_container {
+	display: flex; 
+	margin: 2.5rem auto;
+	gap: 2.5rem; 
+	justify-content: center; 
+	width: 50%; 
+}
+
+.carousel_nav_button {
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+	background-color: #B8BFCF;
+	border-radius: 9999px; 
+	width: 4rem; 
+	height: 4rem; 
+	cursor: pointer; 
+	transition: all;
+	transition-timing-function: linear;
+	transition-duration: 100ms;
+
+	&:hover {
+		background-color: #001D5D;
+	}
+}
