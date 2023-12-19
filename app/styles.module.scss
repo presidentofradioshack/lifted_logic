@@ -9,6 +9,7 @@
 	height: 100vh;
 	color: #ffffff;
 	overflow: hidden;
+	background-color: black;
 
 	.hero_bg {
 		width: 100%;
@@ -16,9 +17,10 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: -10;
+		z-index: 1;
 		background: url("../public/images/marcela-laskoski-YrtFlrLo2DQ-unsplash.jpg") center/cover;
 		animation: shrink 5s infinite alternate;
+		opacity: 0.6;
 	}
 
 	@keyframes shrink {
@@ -37,6 +39,7 @@
 	
 
 	.hero_content {
+		z-index: 2;
 		width: 100%;
 		text-align: center;
 		margin: 0 auto;
@@ -81,7 +84,7 @@
 			background-color: #ffffff;
 
 			&:hover {
-				background-color: black;
+				filter: invert(1);
 			}
 		}
 

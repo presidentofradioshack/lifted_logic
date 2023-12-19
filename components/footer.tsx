@@ -43,9 +43,10 @@ const Footer = () => {
 						<Image src={LogoWhite} alt='Synder Recordings' />
 					</div>
 
-					<p className={styles.footer_address} style={{ color: "white" }}>
-						8521 W Fairfax Rd Los Angeles, CA
-					</p>
+					<div className={styles.footer_address} style={{ color: "white" }}>
+						<p style={{ color: "white" }}>8521 W Fairfax Rd</p>
+						<p style={{ color: "white" }}>Los Angeles, CA</p>
+					</div>
 
 					<div>
 						<p style={{ color: "white" }}>990210</p>
