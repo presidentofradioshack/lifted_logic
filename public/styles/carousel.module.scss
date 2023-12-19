@@ -1,3 +1,5 @@
+@use '../../app/mixins.module.scss';
+
 .carousel_card {
 	display: flex;
 	align-items: center;
@@ -11,6 +13,10 @@
 		display: flex; 
 		gap: 16px;
 		height: 75%;
+
+		@include mixins.for-really-small-phones {
+			flex-direction: column;
+		}
 
 		.carousel_card_image_container {
 			aspect-ratio: square;
