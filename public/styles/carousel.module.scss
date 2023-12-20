@@ -34,8 +34,7 @@
 
 			@include mixins.for-really-small-phones {
 				p {
-					font-size: 10px;
-					line-height: normal;
+					display: none;
 				}
 				
 			}
@@ -45,7 +44,7 @@
 
 .carousel_button_container {
 	display: flex; 
-	margin: 2.5rem auto;
+	margin: 2.5rem auto 4rem;
 	gap: 2.5rem; 
 	justify-content: center; 
 	width: 50%; 
