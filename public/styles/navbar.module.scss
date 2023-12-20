@@ -18,8 +18,16 @@
 	}
 
 	.mobile_menu_icon {
+		cursor: pointer;
 		display: block;
 		margin-left: auto;
+		border-radius: 5px;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background-color: black;
+			color: white;
+		}
 	}
 
 	.nav_links {
