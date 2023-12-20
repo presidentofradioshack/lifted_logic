@@ -63,6 +63,10 @@
 	width: 0;
 	transition: all 0.3s ease;
 
+	@include mixins.for-desktop-up {
+		display: none;
+	}
+
 	li {
 		margin: 40px;
 	}
