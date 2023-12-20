@@ -84,6 +84,22 @@ const MainNav = () => {
 					</ul>
 				</div>
 
+				<ul className={styles.mobile_nav} style={{ width: showNav ? "270px" : "0" }}>
+					{routes.map((route) => (
+						<li key={route.href}>
+							<Link key={route.href} href={route.href}>
+								<Image src={route.icon} alt={route.label} style={{ marginRight: "12px", display: "inline" }} />
+
+								<span>{route.label}</span>
+							</Link>
+						</li>
+					))}
+
+					<li>
+						<button className={styles.button}>Sign Up</button>
+					</li>
+				</ul>
+
 				<div className={styles.signup_button}>
 					<button className={styles.button}>Sign Up</button>
 				</div>

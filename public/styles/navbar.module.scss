@@ -54,4 +54,20 @@
 	}
 }
 
+.mobile_nav {
+	position: absolute;
+	top: 64px;
+	height: calc(100vh - 64px);
+	right: 0;
+	background-color: white;
+	width: 0;
+	transition: all 0.3s ease;
 
+	li {
+		margin: 40px;
+	}
+
+	button {
+		display: block;
+	}
+}
