@@ -65,5 +65,9 @@
 
 	&:hover {
 		background-color: #001D5D;
+
+		img {
+			filter: invert(1);
+		}
 	}
 }

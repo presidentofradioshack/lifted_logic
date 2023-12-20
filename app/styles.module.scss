@@ -238,6 +238,16 @@
 			border-width: 1px; 
 		}
 
+		.textarea {
+			position: relative;
+
+			img {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+		}
+
 		button {
 			display: block;
 			width: 100%;

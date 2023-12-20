@@ -9,6 +9,7 @@ import Carousel from "@/components/carousel";
 import Map from "@/components/map";
 import { useJsApiLoader } from "@react-google-maps/api";
 import styles from "@/app/styles.module.scss";
+import DownChevron from "@/public/icons/Down Chevron.svg";
 
 enum ReasonEnum {
 	other = "other",
@@ -151,7 +152,9 @@ const HomePage = () => {
 
 						<div className={styles.form_input_group} style={{ marginTop: "24px" }}>
 							<label>Message (Optional)</label>
-							<textarea placeholder='Write a brief message...' rows={6}></textarea>
+							<textarea className={styles.textarea} placeholder='Write a brief message...' rows={6}>
+								<Image src={DownChevron} alt='' />
+							</textarea>
 						</div>
 
 						<button type='submit' style={{ marginTop: "24px" }}>

@@ -89,6 +89,10 @@ textarea {
 
 select {
 	color: #777777;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url("../public/icons/Down Chevron.svg") no-repeat right 20px center;
 }
 
 button,
@@ -105,4 +109,8 @@ button[type="submit"] {
 button:hover {
 	background-color: #42a418;
 	color: white;
+}
+
+::-webkit-resizer {
+	background: url("../public/icons/Message size indicator.svg") no-repeat;
 }
