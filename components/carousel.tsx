@@ -38,29 +38,26 @@ const CarouselSlider = () => {
 		},
 		desktop: {
 			breakpoint: { max: 3000, min: 1024 },
-			items: 2,
-			partialVisibilityGutter: 60,
+			items: 1,
 		},
 		tablet: {
 			breakpoint: { max: 1120, min: 464 },
 			items: 1,
-			partialVisibilityGutter: 60,
 		},
 		mobile: {
 			breakpoint: { max: 720, min: 0 },
 			items: 1,
-			partialVisibilityGutter: 60,
 		},
 	};
 
 	return (
 		<Carousel
 			afterChange={(nextSlide, { currentSlide }) => {
-				setCurrentSlide(currentSlide + 1);
+				setCurrentSlide(currentSlide);
 			}}
 			responsive={responsive}
 			arrows={false}
-			partialVisbile={true}
+			centerMode={true}
 			renderButtonGroupOutside={true}
 			// @ts-ignore
 			customButtonGroup={<ButtonGroup />}
@@ -68,7 +65,7 @@ const CarouselSlider = () => {
 			containerClass='carousel-container'
 		>
 			{releases.map((release, index) => (
-				<div key={index} className={styles.carousel_card}>
+				<div key={index} className={styles.carousel_card} style={{ opacity: index !== currentSlide ? "0.5" : "1" }}>
 					<div className={styles.carousel_card_wrapper}>
 						<div className={styles.carousel_card_image_container}>
 							<Image

@@ -3,19 +3,26 @@
 .carousel_card {
 	display: flex;
 	align-items: center;
-	padding: 36px 36px;
+	padding: 36px;
 	margin: 0 1.5rem;
 	gap: 1rem;
 	align-items: center; 
 	background-color: #ffffff; 
+	transition: all 0.3s ease;
+
+	@include mixins.for-really-small-phones {
+		padding: 16px;
+		min-width: fit-content;
+	}
 
 	.carousel_card_wrapper {
-		display: flex; 
+		display: flex;
+		flex-direction: column;
 		gap: 16px;
 		height: 75%;
 
-		@include mixins.for-really-small-phones {
-			flex-direction: column;
+		@include mixins.for-tablet-landscape-up {
+			flex-direction: row;
 		}
 
 		.carousel_card_image_container {
@@ -24,6 +31,14 @@
 	
 		.carousel_card_details_container {
 			flex: 1;
+
+			@include mixins.for-really-small-phones {
+				p {
+					font-size: 10px;
+					line-height: normal;
+				}
+				
+			}
 		}
 	}
 }
